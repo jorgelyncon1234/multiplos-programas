@@ -1,3 +1,12 @@
+import uuid
+nome = ''
+bv = 0
+ID = int
+numero = int
+marcela = ('marcela')
+savot =''
+novo = ''
+salvo = ''
 saldo = 0.0
 depv =0.0
 saque =0.0
@@ -47,7 +56,17 @@ while True:
     
     while True:
      print('/=/=/=/=/BANCO/=/=/=/=/')
-     escobanco = int(input("escolha: \n 1 DEPOSITAR \n 2 SACAR \n 3 transferir \n 6 SAIR "))
+     if bv == 0  :
+      nome = str(input('me diga seu nome:'))
+      numero = int(input('insira seu numero:'))
+      
+      print ('seu id é',uuid)
+      bv =+ 1 
+     else:
+      print (' bem vindo')
+        
+     escobanco = int(input("escolha: \n 1 DEPOSITAR \n 2 SACAR \n 3 transferir \n 4 ver meu perfil/informações \n 6 SAIR "))
+     print(saldo)
      
 
      if escobanco ==1 :
@@ -65,6 +84,23 @@ while True:
           saldo -= saque 
           print('você sacou:',saque)
           print('SALDO RESTANTE:',saldo)
+     elif escobanco ==3:
+         print ('saldo atual:',saldo,'\n DESEJA TRANSFERIR PARA USUÁRIO SALVO OU REGISTRAR UM NOVO?\n1para salvo \n2 para novo')
+         escotrans = int(input())
+         if escotrans ==1:
+             print('selecione entre os usuários salvos:','\nmarcela')
+             savot = (input('digite o nome do usuário á receber:'))
+             transfer = int(input('valor a ser transferido'))
+             if savot == 'marcela' :
+                 if saldo <transfer:
+                     print('erro,saldo insuficiente;')
+                     break
+                 print('valor de ',transfer,'será transferido á ',savot,':')
+                 saldo -= transfer 
+                 
+     elif escobanco ==4:
+         print(nome,numero,uuid)         
+          
           
           
  if programa ==6:
